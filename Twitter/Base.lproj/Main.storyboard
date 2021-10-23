@@ -56,13 +56,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="reE-1T-STM">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="133" id="reE-1T-STM" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="reE-1T-STM" id="ZUW-8R-TvB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAo-lb-F9w">
+                                            <rect key="frame" x="93" y="11" width="81" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epe-kG-7T3">
+                                            <rect key="frame" x="93" y="36.5" width="321" height="96.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-RE-KPp">
+                                            <rect key="frame" x="20" y="11" width="65" height="111"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="0iJ-My-iue"/>
+                                                <constraint firstAttribute="height" constant="65" id="2Kk-IG-j5R"/>
+                                                <constraint firstAttribute="width" constant="65" id="9Pt-ES-CW1"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="H13-ow-ljg"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="LyI-qo-OJ1"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="swA-IB-WZf"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WAo-lb-F9w" firstAttribute="leading" secondItem="qOy-RE-KPp" secondAttribute="trailing" constant="8" symbolic="YES" id="1lp-yr-dEb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qOy-RE-KPp" secondAttribute="bottom" id="Alx-Ky-Thj"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="bottom" secondItem="ZUW-8R-TvB" secondAttribute="bottomMargin" id="EuE-27-adX"/>
+                                        <constraint firstAttribute="trailing" secondItem="epe-kG-7T3" secondAttribute="trailing" id="LRq-Pg-Uhi"/>
+                                        <constraint firstItem="epe-kG-7T3" firstAttribute="top" secondItem="WAo-lb-F9w" secondAttribute="bottom" constant="4" id="Lnm-gx-3AK"/>
+                                        <constraint firstAttribute="bottom" secondItem="epe-kG-7T3" secondAttribute="bottom" id="Ng3-Hb-2Mr"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="top" secondItem="ZUW-8R-TvB" secondAttribute="topMargin" id="P1r-1e-EJE"/>
+                                        <constraint firstItem="epe-kG-7T3" firstAttribute="leading" secondItem="qOy-RE-KPp" secondAttribute="trailing" constant="8" id="byF-w0-cNz"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="leading" secondItem="ZUW-8R-TvB" secondAttribute="leadingMargin" id="g5G-iT-sXs"/>
+                                        <constraint firstItem="WAo-lb-F9w" firstAttribute="top" secondItem="ZUW-8R-TvB" secondAttribute="topMargin" id="kPR-lr-x0A"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="leading" secondItem="ZUW-8R-TvB" secondAttribute="leadingMargin" id="lTa-K0-RHM"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="top" secondItem="ZUW-8R-TvB" secondAttribute="topMargin" id="pic-fh-6HV"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="top" secondItem="ZUW-8R-TvB" secondAttribute="topMargin" id="qli-cD-sZv"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="leading" secondItem="ZUW-8R-TvB" secondAttribute="leadingMargin" id="yot-Fd-omT"/>
+                                        <constraint firstItem="qOy-RE-KPp" firstAttribute="top" secondItem="ZUW-8R-TvB" secondAttribute="topMargin" id="zhT-QX-iK4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImageView" destination="qOy-RE-KPp" id="vEs-1B-slB"/>
+                                    <outlet property="tweetContent" destination="epe-kG-7T3" id="996-kH-KYA"/>
+                                    <outlet property="userNameLabel" destination="WAo-lb-F9w" id="S8z-4u-Tym"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pz-Nt-sdq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="1385"/>
+            <point key="canvasLocation" x="395.6521739130435" y="1384.8214285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zxV-pt-89p">
